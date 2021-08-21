@@ -737,4 +737,14 @@ body {
   padding-bottom: 2rem;
 }
 
+.footer__icon, .nav__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.nav__logo {
+  width: 10.6rem;
+  height: 1.875rem;
+}
+
 /*# sourceMappingURL=main.css.map */

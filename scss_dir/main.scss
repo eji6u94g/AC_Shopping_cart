@@ -205,3 +205,24 @@ $spacers: (
   }
 }
 
+/////// basic setting end ////////////
+%icon {
+  width: 1.5rem;
+    height: 1.5rem;
+}
+
+.nav {
+  &__logo {
+    width: 10.6rem;
+    height: 1.875rem;
+  }
+  &__icon {
+    @extend %icon;
+  }
+}
+
+.footer {
+  &__icon {
+    @extend %icon;
+  }
+}
