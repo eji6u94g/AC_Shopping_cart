@@ -222,7 +222,17 @@ $spacers: (
 }
 
 .footer {
+  a {
+    display: block;
+  }
   &__icon {
     @extend %icon;
+  }
+}
+
+.cart {
+  &__img {
+    width: 100px;
+    height: 100px;
   }
 }

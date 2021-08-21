@@ -32,7 +32,7 @@
 
       <div class='d-flex'>
         <div>
-          <div id='step__conntainer'>
+          <div id='step__conntainer' class='d-flex'>
             <div>
               <span>1</span>
               <span>寄送地址</span>
@@ -53,9 +53,9 @@
 
           <form action="">
             <div class='part'>
-              <div>
-                <h2>寄送地址</h2>
+              <h2>寄送地址</h2>
 
+              <div class='d-flex'>
                 <div>
                   <label for="salutation">稱謂</label>
                   <select name="salutation" id="salutation" required>
@@ -71,7 +71,7 @@
                 </div>
               </div>
 
-              <div>
+              <div class='d-flex'>
                 <div>
                   <label for="phone">電話</label>
                   <input type="tel" id='phone' placeholder="請輸入行動電話" required>
@@ -83,7 +83,7 @@
                 </div>
               </div>
 
-              <div>
+              <div class='d-flex'>
                 <div>
                   <label for="county">縣市</label>
                   <select name="county" id="county" required>
@@ -123,7 +123,7 @@
             <div class='part'>
               <h2>運送方式</h2>
 
-              <div>
+              <div class='d-flex'>
                 <input type="radio" id='standard' name='delivery' value='standard'>
                 <label for="standard">
                   <p>標準運送</p>
@@ -132,7 +132,7 @@
                 <span>免費</span>
               </div>
 
-              <div>
+              <div class='d-flex'>
                 <input type="radio" id='dhl_delivery' name='delivery' value='dhl_delivery'>
                 <label for="dhl_delivery">
                   <p>DHL貨運</p>
@@ -155,7 +155,7 @@
                 <input id="credit-card-number" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" maxlength="19" placeholder="1111 2222 3333 4444" required>
               </div>
 
-              <div>
+              <div class='d-flex'>
                 <div>
                   <label for="expiry-day">有效期限</label>
                   <input type="text" id='expiry-day' placeholder="MM / YY" required>
@@ -179,11 +179,11 @@
           <h3>購物籃</h3>
           <div>
             <div>
-              <div>
-                <img src="/img/cart/item_1@2x.png" alt="破壞補丁修身牛仔褲">
+              <div class='d-flex'>
+                <img src="/img/cart/item_1@2x.png" alt="破壞補丁修身牛仔褲" class='cart__img'>
                 <div>
                   <p>破壞補丁修身牛仔褲</p>
-                  <div>
+                  <div class='d-flex'>
                     <span>-</span>
                     <span>1</span>
                     <span>+</span>
@@ -195,11 +195,11 @@
                 </div>
               </div>
 
-              <div>
-                <img src="/img/cart/item_2@2x.png" alt="刷色直筒牛仔褲">
+              <div class='d-flex'>
+                <img src="/img/cart/item_2@2x.png" alt="刷色直筒牛仔褲" class='cart__img'>
                 <div>
                   <p>刷色直筒牛仔褲</p>
-                  <div>
+                  <div class='d-flex'>
                     <span>-</span>
                     <span>1</span>
                     <span>+</span>
@@ -229,7 +229,7 @@
       </div>
     </div>
 
-    <div class='d-flex'>
+    <div class='d-flex footer'>
       <img src="/img/nav/Logo@2x.png" alt="Alpha shop icon" class='nav__logo'>
 
       <div>
@@ -263,7 +263,7 @@
       <div>
         <h2>追蹤 ALPHA Shop</h2>
         <a href="tel:+886 02123-45678">+886 02123-45678</a>
-        <div>
+        <div class='d-flex'>
           <img src="img/footer/fb_icon@2x.png" alt="facebook link" class='footer__icon'>
           <img src="img/footer/ig_icon@2x.png" alt="instagram link" class='footer__icon'>
           <img src="img/footer/whatsapp_icon@2x.png" alt="what's app link" class='footer__icon'>

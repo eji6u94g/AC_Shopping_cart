@@ -746,5 +746,12 @@ body {
   width: 10.6rem;
   height: 1.875rem;
 }
+.footer a {
+  display: block;
+}
+.cart__img {
+  width: 100px;
+  height: 100px;
+}
 
 /*# sourceMappingURL=main.css.map */
