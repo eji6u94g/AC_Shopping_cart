@@ -27,11 +27,11 @@
       </div>
     </nav>
 
-    <div >
+    <main>
       <h1>結帳</h1>
 
-      <div class='d-flex'>
-        <div>
+      <div class='d-flex justify-content-between'>
+        <div class="main__customer__information w-50">
           <div id='step__conntainer' class='d-flex'>
             <div>
               <span>1</span>
@@ -175,49 +175,59 @@
           </div>
         </div>
 
-        <div>
-          <h3>購物籃</h3>
+        <div class="main__cart w-40 py-8 px-6 d-flex flex-column justify-content-between">
+          <h3 class="mb-8">購物籃</h3>
           <div>
             <div>
-              <div class='d-flex'>
-                <img src="/img/cart/item_1@2x.png" alt="破壞補丁修身牛仔褲" class='cart__img'>
-                <div>
+              <div class='d-flex mb-8 justify-content-between position-relative'>
+                <img src="/img/cart/item_1@2x.png" alt="破壞補丁修身牛仔褲" class='main__cart__img'>
+                <div class="main__cart__item__info__container">
                   <p>破壞補丁修身牛仔褲</p>
-                  <div class='d-flex'>
-                    <span>-</span>
+                  <div class='d-flex mt-4 main__cart__item__info__container__quantity justify-content-between align-items-center'>
+                    <span class="main__cart__item__info__container__quantity__icon">
+                      <div class="main__cart__item__info__container__quantity__icon__minus"></div>
+                    </span>
                     <span>1</span>
-                    <span>+</span>
+                    <span class="main__cart__item__info__container__quantity__icon">
+                      <div class="main__cart__item__info__container__quantity__icon__minus"></div>
+                      <div class="main__cart__item__info__container__quantity__icon__plus"></div>
+                    </span>
                   </div>
                 </div>
-                <div>
+                <div class="main__cart__item__price">
                   <span>$</span>
                   <span>3999</span>
                 </div>
               </div>
 
-              <div class='d-flex'>
-                <img src="/img/cart/item_2@2x.png" alt="刷色直筒牛仔褲" class='cart__img'>
-                <div>
+              <div class='d-flex mb-8 justify-content-between position-relative'>
+                <img src="/img/cart/item_2@2x.png" alt="刷色直筒牛仔褲" class='main__cart__img'>
+                <div class="main__cart__item__info__container">
                   <p>刷色直筒牛仔褲</p>
-                  <div class='d-flex'>
-                    <span>-</span>
+                  <div class='d-flex mt-4  main__cart__item__info__container__quantity justify-content-between align-items-center'>
+                    <span class="main__cart__item__info__container__quantity__icon">
+                      <div class="main__cart__item__info__container__quantity__icon__minus"></div>
+                    </span>
                     <span>1</span>
-                    <span>+</span>
+                    <span class="main__cart__item__info__container__quantity__icon">
+                      <div class="main__cart__item__info__container__quantity__icon__minus"></div>
+                      <div class="main__cart__item__info__container__quantity__icon__plus"></div>
+                    </span>
                   </div>
                 </div>
-                <div>
+                <div class="main__cart__item__price">
                   <span>$</span>
                   <span>1299</span>
                 </div>
               </div>
             </div>
             
-            <div>
+            <div class="mb-8 d-flex justify-content-between border-top pt-4 main__cart__deliveryFee">
               <span>運費</span>
               <span>免運</span>
             </div>
 
-            <div>
+            <div  class='d-flex justify-content-between border-top pt-4 main__cart__totalPrice'>
               <span>小計</span>
               <div>
                 <span>$</span>
@@ -227,7 +237,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </main>
 
     <div class='d-flex footer'>
       <img src="/img/nav/Logo@2x.png" alt="Alpha shop icon" class='nav__logo'>
