@@ -104,14 +104,14 @@ body {
 .justify-content-around {
   justify-content: space-around;
 }
-.align-content-start {
-  align-content: flex-start;
+.align-items-start {
+  align-items: flex-start;
 }
-.align-content-end {
-  align-content: flex-end;
+.align-items-end {
+  align-items: flex-end;
 }
-.align-content-center {
-  align-content: center;
+.align-items-center {
+  align-items: center;
 }
 .align-items-start {
   align-items: flex-start;
@@ -206,19 +206,43 @@ $spacers: (
 }
 
 /////// basic setting end ////////////
+* {
+  border: 1px solid red;
+}
+
 %icon {
   width: 1.5rem;
-    height: 1.5rem;
+  height: 1.5rem;
+}
+
+#main-app {
+  width: 80%;
+  margin: 0 auto;
 }
 
 .nav {
+  position:relative;
+  height: 60px;
+  &__links {
+    width: 384px;
+  }
   &__logo {
     width: 10.6rem;
     height: 1.875rem;
   }
-  &__icon {
+  &__icons {
+    width: 132px;
+    // height: 1.5rem;
+    &__icon {
     @extend %icon;
+    }
   }
+}
+
+.nav__logo {
+  position:absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .footer {

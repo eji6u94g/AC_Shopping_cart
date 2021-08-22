@@ -125,16 +125,16 @@ body {
   justify-content: space-around;
 }
 
-.align-content-start {
-  align-content: flex-start;
+.align-items-start {
+  align-items: flex-start;
 }
 
-.align-content-end {
-  align-content: flex-end;
+.align-items-end {
+  align-items: flex-end;
 }
 
-.align-content-center {
-  align-content: center;
+.align-items-center {
+  align-items: center;
 }
 
 .align-items-start {
@@ -737,15 +737,40 @@ body {
   padding-bottom: 2rem;
 }
 
-.footer__icon, .nav__icon {
+* {
+  border: 1px solid red;
+}
+
+.footer__icon, .nav__icons__icon {
   width: 1.5rem;
   height: 1.5rem;
 }
 
+#main-app {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.nav {
+  position: relative;
+  height: 60px;
+}
+.nav__links {
+  width: 384px;
+}
 .nav__logo {
   width: 10.6rem;
   height: 1.875rem;
 }
+.nav__icons {
+  width: 132px;
+}
+.nav__logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .footer a {
   display: block;
 }
