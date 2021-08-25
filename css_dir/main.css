@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* reset css */
 body {
   margin: 0;
@@ -193,6 +194,10 @@ body {
   width: 80%;
 }
 
+.w-90 {
+  width: 90%;
+}
+
 .w-100 {
   width: 100%;
 }
@@ -215,6 +220,10 @@ body {
 
 .h-80 {
   height: 80%;
+}
+
+.h-90 {
+  height: 90%;
 }
 
 .h-100 {
@@ -761,18 +770,24 @@ body {
   padding-bottom: 2rem;
 }
 
-.footer__icon, .nav__icons__icon {
+footer__icon, .nav__icons__icon {
   width: 1.5rem;
   height: 1.5rem;
 }
 
-.main__cart__item__info__container__quantity__icon__plus, .main__cart__item__info__container__quantity__icon__minus {
+.main__cart__item__container__quantity__icon__plus, .main__cart__item__container__quantity__icon__minus {
   background: black;
   height: 1.8px;
   width: 10.84px;
   position: absolute;
   left: 50%;
   top: 50%;
+}
+
+.main__customer__part.deliveryMethod .standardDelivery, .main__customer__part.deliveryMethod .dhlDelivery, .main__customer__part.deliveryInfo input, .main__customer__part.deliveryInfo select {
+  border: 1px solid #4A4A4A;
+  box-sizing: border-box;
+  border-radius: 4px;
 }
 
 .border-top {
@@ -804,7 +819,7 @@ body {
   transform: translateX(-50%);
 }
 
-.footer a {
+footer a {
   display: block;
 }
 main {
@@ -814,6 +829,109 @@ main h1 {
   margin-bottom: 48px;
 }
 
+.main__customer #step-conntainer {
+  margin-bottom: 64px;
+}
+.main__customer__step:nth-child(1) .main__customer__step__number::after {
+  content: "1";
+  color: #AFB1BD;
+}
+.main__customer__step:nth-child(2) .main__customer__step__number::after {
+  content: "2";
+  color: #AFB1BD;
+}
+.main__customer__step:nth-child(3) .main__customer__step__number::after {
+  content: "3";
+  color: #AFB1BD;
+}
+.main__customer__step span:first-child {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid #AFB1BD;
+}
+.main__customer__step span:nth-child(2) {
+  color: #AFB1BD;
+}
+.main__customer__step div {
+  width: 60px;
+  height: 1px;
+  background: black;
+}
+.main__customer__step .main__customer__step__number.checked::after {
+  content: "✔";
+}
+.main__customer__step .main__customer__step__number.checked::after, .main__customer__step .main__customer__step__number.active::after {
+  color: white;
+}
+.main__customer__step .checked, .main__customer__step .active {
+  background: #333333;
+}
+.main__customer__part.deliveryInfo label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1rem;
+  color: #808080;
+  margin-bottom: 8px;
+}
+.main__customer__part.deliveryInfo input, .main__customer__part.deliveryInfo select {
+  height: 40px;
+  width: 100%;
+  text-indent: 1.125rem;
+}
+.main__customer__part.deliveryInfo select option:first-child {
+  color: white;
+}
+.main__customer__part.deliveryInfo .salution_name div:first-child, .main__customer__part.deliveryInfo .county_address div:first-child {
+  width: 29.6%;
+}
+.main__customer__part.deliveryInfo .salution_name div:nth-child(2), .main__customer__part.deliveryInfo .county_address div:nth-child(2) {
+  width: 64.8%;
+}
+.main__customer__part.deliveryInfo .phone_email div {
+  width: 47.2%;
+}
+.main__customer__part.deliveryMethod .standardDelivery, .main__customer__part.deliveryMethod .dhlDelivery {
+  position: relative;
+  border: 1px solid #F0F0F5;
+  width: 80.5%;
+  height: 60px;
+}
+.main__customer__part.deliveryMethod .standardDelivery p:first-child, .main__customer__part.deliveryMethod .dhlDelivery p:first-child {
+  font-size: 0.875rem;
+}
+.main__customer__part.deliveryMethod .standardDelivery p:nth-child(2), .main__customer__part.deliveryMethod .standardDelivery span, .main__customer__part.deliveryMethod .dhlDelivery p:nth-child(2), .main__customer__part.deliveryMethod .dhlDelivery span {
+  font-size: 0.75rem;
+}
+.main__customer__part.deliveryMethod .standardDelivery input, .main__customer__part.deliveryMethod .dhlDelivery input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-sizing: initial;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #F0F0F5;
+  transition: 0.2s all linear;
+}
+.main__customer__part.deliveryMethod .standardDelivery input:checked, .main__customer__part.deliveryMethod .dhlDelivery input:checked {
+  border: 1px solid black;
+  box-shadow: inset 0 0 0 7px black;
+}
+.main__customer__part.deliveryMethod .standardDelivery input:checked::before, .main__customer__part.deliveryMethod .dhlDelivery input:checked::before {
+  border: 1px solid #2A2A2A;
+  width: 100%;
+  height: 100%;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 4px;
+}
+.main__customer__part.deliveryMethod .dhlDelivery p:first-child {
+  font-weight: 700;
+}
 .main__cart {
   border: 1px solid #F0F0F5;
   box-sizing: border-box;
@@ -827,33 +945,32 @@ main h1 {
   width: 100px;
   height: 100px;
 }
-.main__cart__item__info__container {
+.main__cart__item__container {
   position: absolute;
   left: 121px;
 }
-.main__cart__item__info__container__quantity {
+.main__cart__item__container__quantity {
   width: 116px;
   height: 27px;
   font-size: 14px;
 }
-.main__cart__item__info__container__quantity__icon {
+.main__cart__item__container__quantity__icon {
   width: 27px;
   height: 100%;
   background: #F0F0F5;
   border-radius: 50%;
   position: relative;
 }
-.main__cart__item__info__container__quantity__icon__minus {
+.main__cart__item__container__quantity__icon__minus {
   transform: translate(-50%, -50%);
 }
-.main__cart__item__info__container__quantity__icon__plus {
+.main__cart__item__container__quantity__icon__plus {
   transform: translate(-50%, -50%) rotate(90deg);
 }
-.main__cart__item__info__container__quantity span:nth-child(2) {
+.main__cart__item__container__quantity span:nth-child(2) {
   font-weight: 500;
 }
 .main__cart__item__price {
-  -webkit-appearance: none;
   font-weight: 700;
 }
 .main__cart__deliveryFee span:nth-child(2) {

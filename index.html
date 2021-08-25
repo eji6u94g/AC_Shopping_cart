@@ -31,31 +31,31 @@
       <h1>結帳</h1>
 
       <div class='d-flex justify-content-between'>
-        <div class="main__customer__information w-50">
-          <div id='step__conntainer' class='d-flex'>
-            <div>
-              <span>1</span>
-              <span>寄送地址</span>
+        <div class="main__customer w-50">
+          <div id='step-conntainer' class='d-flex align-items-center justify-content-between mb-'>
+            <div class="main__customer__step d-flex align-items-center">
+              <span class="d-flex align-items-center justify-content-center main__customer__step__number checked"></span>
+              <span class="ml-2">寄送地址</span>
+              <div class="ml-8"></div>
             </div>
 
-            <div>
-              <span></span>
-              <span>2</span>
-              <span>運送方式</span>
+            <div class="main__customer__step d-flex align-items-center"> 
+              <span class="d-flex align-items-center justify-content-center main__customer__step__number active"></span>
+              <span class="ml-2">運送方式</span>
+              <div class="ml-8"></div>
             </div>
 
-            <div>
-              <span></span>
-              <span>3</span>
-              <span>付款資訊</span>
+            <div class="main__customer__step d-flex align-items-center">
+              <span class="d-flex align-items-center justify-content-center main__customer__step__number"></span>
+              <span class="ml-2">付款資訊</span>
             </div>
           </div>
 
           <form action="">
-            <div class='part'>
-              <h2>寄送地址</h2>
+            <div class='main__customer__part deliveryInfo'>
+              <h2 class="mb-6">寄送地址</h2>
 
-              <div class='d-flex'>
+              <div class='d-flex justify-content-between salution_name mb-6'>
                 <div>
                   <label for="salutation">稱謂</label>
                   <select name="salutation" id="salutation" required>
@@ -71,7 +71,7 @@
                 </div>
               </div>
 
-              <div class='d-flex'>
+              <div class='d-flex justify-content-between phone_email mb-6'>
                 <div>
                   <label for="phone">電話</label>
                   <input type="tel" id='phone' placeholder="請輸入行動電話" required>
@@ -83,7 +83,7 @@
                 </div>
               </div>
 
-              <div class='d-flex'>
+              <div class='d-flex justify-content-between county_address mb-6'>
                 <div>
                   <label for="county">縣市</label>
                   <select name="county" id="county" required>
@@ -115,35 +115,39 @@
 
                 <div>
                   <label for="address">地址</label>
-                  <input type="text" id='address' required>
+                  <input type="text" id='address' placeholder="請輸入地址" required>
                 </div>
               </div>
             </div>
 
-            <div class='part'>
-              <h2>運送方式</h2>
+            <div class='main__customer__part deliveryMethod'>
+              <h2 class="mb-6">運送方式</h2>
 
-              <div class='d-flex'>
+              <div class='d-flex mb-6 standardDelivery align-items-center justify-content-between'>
                 <input type="radio" id='standard' name='delivery' value='standard'>
-                <label for="standard">
-                  <p>標準運送</p>
-                  <p>約3~7個工作天</p>
-                </label>
-                <span>免費</span>
+                <div class="d-flex justify-content-between mx-5 w-90">
+                  <label for="standard">
+                    <p>標準運送</p>
+                    <p>約3~7個工作天</p>
+                  </label>
+                  <span>免費</span>
+                </div>
               </div>
 
-              <div class='d-flex'>
+              <div class='d-flex dhlDelivery align-items-center justify-content-between'>
                 <input type="radio" id='dhl_delivery' name='delivery' value='dhl_delivery'>
-                <label for="dhl_delivery">
-                  <p>DHL貨運</p>
-                  <p>48小時內送達</p>
-                </label>
-                <span>$500</span>
+                <div class="d-flex justify-content-between mx-5 w-90">
+                  <label for="dhl_delivery">
+                    <p>DHL貨運</p>
+                    <p>48小時內送達</p>
+                  </label>
+                  <span>$500</span>
+                </div>
               </div>
             </div>
 
-            <div class='part'>
-              <h2>付款資訊</h2>
+            <div class='main__customer__part'>
+              <h2 class="mb-6">付款資訊</h2>
 
               <div>
                 <label for="credit-card-name">持卡人姓名</label>
@@ -181,16 +185,16 @@
             <div>
               <div class='d-flex mb-8 justify-content-between position-relative'>
                 <img src="/img/cart/item_1@2x.png" alt="破壞補丁修身牛仔褲" class='main__cart__img'>
-                <div class="main__cart__item__info__container">
+                <div class="main__cart__item__container">
                   <p>破壞補丁修身牛仔褲</p>
-                  <div class='d-flex mt-4 main__cart__item__info__container__quantity justify-content-between align-items-center'>
-                    <span class="main__cart__item__info__container__quantity__icon">
-                      <div class="main__cart__item__info__container__quantity__icon__minus"></div>
+                  <div class='d-flex mt-4 main__cart__item__container__quantity justify-content-between align-items-center'>
+                    <span class="main__cart__item__container__quantity__icon">
+                      <div class="main__cart__item__container__quantity__icon__minus"></div>
                     </span>
                     <span>1</span>
-                    <span class="main__cart__item__info__container__quantity__icon">
-                      <div class="main__cart__item__info__container__quantity__icon__minus"></div>
-                      <div class="main__cart__item__info__container__quantity__icon__plus"></div>
+                    <span class="main__cart__item__container__quantity__icon">
+                      <div class="main__cart__item__container__quantity__icon__minus"></div>
+                      <div class="main__cart__item__container__quantity__icon__plus"></div>
                     </span>
                   </div>
                 </div>
@@ -202,16 +206,16 @@
 
               <div class='d-flex mb-8 justify-content-between position-relative'>
                 <img src="/img/cart/item_2@2x.png" alt="刷色直筒牛仔褲" class='main__cart__img'>
-                <div class="main__cart__item__info__container">
+                <div class="main__cart__item__container">
                   <p>刷色直筒牛仔褲</p>
-                  <div class='d-flex mt-4  main__cart__item__info__container__quantity justify-content-between align-items-center'>
-                    <span class="main__cart__item__info__container__quantity__icon">
-                      <div class="main__cart__item__info__container__quantity__icon__minus"></div>
+                  <div class='d-flex mt-4  main__cart__item__container__quantity justify-content-between align-items-center'>
+                    <span class="main__cart__item__container__quantity__icon">
+                      <div class="main__cart__item__container__quantity__icon__minus"></div>
                     </span>
                     <span>1</span>
-                    <span class="main__cart__item__info__container__quantity__icon">
-                      <div class="main__cart__item__info__container__quantity__icon__minus"></div>
-                      <div class="main__cart__item__info__container__quantity__icon__plus"></div>
+                    <span class="main__cart__item__container__quantity__icon">
+                      <div class="main__cart__item__container__quantity__icon__minus"></div>
+                      <div class="main__cart__item__container__quantity__icon__plus"></div>
                     </span>
                   </div>
                 </div>
@@ -239,7 +243,7 @@
       </div>
     </main>
 
-    <div class='d-flex footer'>
+    <footer class='d-flex'>
       <img src="/img/nav/Logo@2x.png" alt="Alpha shop icon" class='nav__logo'>
 
       <div>
@@ -279,7 +283,7 @@
           <img src="img/footer/whatsapp_icon@2x.png" alt="what's app link" class='footer__icon'>
         </div>
       </div>
-    </div>
+    </footer>
   </div>
 
   <script src="/index.js"></script>
