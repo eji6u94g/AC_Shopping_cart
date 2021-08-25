@@ -52,7 +52,7 @@
           </div>
 
           <form action="">
-            <div class='main__customer__part deliveryInfo'>
+            <div class='main__customer__part shippingInfo'>
               <h2 class="mb-6">寄送地址</h2>
 
               <div class='d-flex justify-content-between salution_name mb-6'>
@@ -120,11 +120,11 @@
               </div>
             </div>
 
-            <div class='main__customer__part deliveryMethod'>
+            <div class='main__customer__part shippingMethod'>
               <h2 class="mb-6">運送方式</h2>
 
               <div class='d-flex mb-6 standardDelivery align-items-center justify-content-between'>
-                <input type="radio" id='standard' name='delivery' value='standard'>
+                <input type="radio" id='standard' name='delivery' value='standard' class="ml-5">
                 <div class="d-flex justify-content-between mx-5 w-90">
                   <label for="standard">
                     <p>標準運送</p>
@@ -135,7 +135,7 @@
               </div>
 
               <div class='d-flex dhlDelivery align-items-center justify-content-between'>
-                <input type="radio" id='dhl_delivery' name='delivery' value='dhl_delivery'>
+                <input type="radio" id='dhl_delivery' name='delivery' value='dhl_delivery' class="ml-5">
                 <div class="d-flex justify-content-between mx-5 w-90">
                   <label for="dhl_delivery">
                     <p>DHL貨運</p>
@@ -146,20 +146,20 @@
               </div>
             </div>
 
-            <div class='main__customer__part'>
+            <div class='main__customer__part paymentInfo'>
               <h2 class="mb-6">付款資訊</h2>
 
-              <div>
+              <div class="mb-6">
                 <label for="credit-card-name">持卡人姓名</label>
                 <input type="text" id='credit-card-name' placeholder="John Doe" required>
               </div>
 
-              <div>
+              <div class="mb-6">
                 <label for="credit-card-number">卡號</label>
                 <input id="credit-card-number" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" maxlength="19" placeholder="1111 2222 3333 4444" required>
               </div>
 
-              <div class='d-flex'>
+              <div class='d-flex w-100 align-items-center justify-content-between'>
                 <div>
                   <label for="expiry-day">有效期限</label>
                   <input type="text" id='expiry-day' placeholder="MM / YY" required>

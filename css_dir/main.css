@@ -784,10 +784,21 @@ footer__icon, .nav__icons__icon {
   top: 50%;
 }
 
-.main__customer__part.deliveryMethod .standardDelivery, .main__customer__part.deliveryMethod .dhlDelivery, .main__customer__part.deliveryInfo input, .main__customer__part.deliveryInfo select {
+.main__customer__part.paymentInfo input, .main__customer__part.shippingMethod .standardDelivery, .main__customer__part.shippingMethod .dhlDelivery, .main__customer__part.shippingInfo input, .main__customer__part.shippingInfo select {
   border: 1px solid #4A4A4A;
-  box-sizing: border-box;
   border-radius: 4px;
+  height: 40px;
+  width: 100%;
+  text-indent: 1.125rem;
+}
+
+.main__customer__part.paymentInfo label, .main__customer__part.shippingInfo label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1rem;
+  color: #808080;
+  margin-bottom: 8px;
 }
 
 .border-top {
@@ -867,44 +878,32 @@ main h1 {
 .main__customer__step .checked, .main__customer__step .active {
   background: #333333;
 }
-.main__customer__part.deliveryInfo label {
-  display: block;
-  font-size: 0.75rem;
-  font-weight: 700;
-  line-height: 1rem;
-  color: #808080;
-  margin-bottom: 8px;
-}
-.main__customer__part.deliveryInfo input, .main__customer__part.deliveryInfo select {
-  height: 40px;
-  width: 100%;
-  text-indent: 1.125rem;
-}
-.main__customer__part.deliveryInfo select option:first-child {
+.main__customer__part.shippingInfo select option:first-child {
   color: white;
 }
-.main__customer__part.deliveryInfo .salution_name div:first-child, .main__customer__part.deliveryInfo .county_address div:first-child {
+.main__customer__part.shippingInfo .salution_name div:first-child, .main__customer__part.shippingInfo .county_address div:first-child {
   width: 29.6%;
 }
-.main__customer__part.deliveryInfo .salution_name div:nth-child(2), .main__customer__part.deliveryInfo .county_address div:nth-child(2) {
+.main__customer__part.shippingInfo .salution_name div:nth-child(2), .main__customer__part.shippingInfo .county_address div:nth-child(2) {
   width: 64.8%;
 }
-.main__customer__part.deliveryInfo .phone_email div {
+.main__customer__part.shippingInfo .phone_email div {
   width: 47.2%;
 }
-.main__customer__part.deliveryMethod .standardDelivery, .main__customer__part.deliveryMethod .dhlDelivery {
+.main__customer__part.shippingMethod .standardDelivery, .main__customer__part.shippingMethod .dhlDelivery {
   position: relative;
   border: 1px solid #F0F0F5;
   width: 80.5%;
   height: 60px;
+  text-indent: initial;
 }
-.main__customer__part.deliveryMethod .standardDelivery p:first-child, .main__customer__part.deliveryMethod .dhlDelivery p:first-child {
+.main__customer__part.shippingMethod .standardDelivery p:first-child, .main__customer__part.shippingMethod .dhlDelivery p:first-child {
   font-size: 0.875rem;
 }
-.main__customer__part.deliveryMethod .standardDelivery p:nth-child(2), .main__customer__part.deliveryMethod .standardDelivery span, .main__customer__part.deliveryMethod .dhlDelivery p:nth-child(2), .main__customer__part.deliveryMethod .dhlDelivery span {
+.main__customer__part.shippingMethod .standardDelivery p:nth-child(2), .main__customer__part.shippingMethod .standardDelivery span, .main__customer__part.shippingMethod .dhlDelivery p:nth-child(2), .main__customer__part.shippingMethod .dhlDelivery span {
   font-size: 0.75rem;
 }
-.main__customer__part.deliveryMethod .standardDelivery input, .main__customer__part.deliveryMethod .dhlDelivery input {
+.main__customer__part.shippingMethod .standardDelivery input, .main__customer__part.shippingMethod .dhlDelivery input {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -915,11 +914,11 @@ main h1 {
   border: 1px solid #F0F0F5;
   transition: 0.2s all linear;
 }
-.main__customer__part.deliveryMethod .standardDelivery input:checked, .main__customer__part.deliveryMethod .dhlDelivery input:checked {
+.main__customer__part.shippingMethod .standardDelivery input:checked, .main__customer__part.shippingMethod .dhlDelivery input:checked {
   border: 1px solid black;
   box-shadow: inset 0 0 0 7px black;
 }
-.main__customer__part.deliveryMethod .standardDelivery input:checked::before, .main__customer__part.deliveryMethod .dhlDelivery input:checked::before {
+.main__customer__part.shippingMethod .standardDelivery input:checked::before, .main__customer__part.shippingMethod .dhlDelivery input:checked::before {
   border: 1px solid #2A2A2A;
   width: 100%;
   height: 100%;
@@ -929,8 +928,14 @@ main h1 {
   left: 0;
   border-radius: 4px;
 }
-.main__customer__part.deliveryMethod .dhlDelivery p:first-child {
+.main__customer__part.shippingMethod .dhlDelivery p:first-child {
   font-weight: 700;
+}
+.main__customer__part.paymentInfo div:nth-child(2), .main__customer__part.paymentInfo div:nth-child(3) {
+  width: 64.8%;
+}
+.main__customer__part.paymentInfo div:nth-child(4) div {
+  width: 47.2%;
 }
 .main__cart {
   border: 1px solid #F0F0F5;

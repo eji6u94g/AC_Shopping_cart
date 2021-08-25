@@ -241,10 +241,21 @@ $spacers: (
   top: 50%;
 }
 
-%input_border {
+%input_select_border {
   border: 1px solid #4A4A4A;
-  box-sizing: border-box;
   border-radius: 4px;
+  height: 40px;
+  width: 100%;
+  text-indent: 1.125rem;
+}
+
+%label_font {
+  display:block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1rem;
+  color: #808080;
+  margin-bottom: 8px;
 }
 
 .border-top {
@@ -341,20 +352,12 @@ main {
       }
     }
     &__part {
-      &.deliveryInfo {
+      &.shippingInfo {
         label {
-          display:block;
-          font-size: 0.75rem;
-          font-weight: 700;
-          line-height: 1rem;
-          color: #808080;
-          margin-bottom: 8px;
+          @extend %label_font;
         }
         input, select {
-          @extend %input_border;
-          height:40px;
-          width: 100%;
-          text-indent: 1.125rem;
+          @extend %input_select_border;
         }
         select option:first-child {
           color:white;
@@ -373,13 +376,14 @@ main {
           }
         }
       }
-      &.deliveryMethod {
+      &.shippingMethod {
         .standardDelivery, .dhlDelivery {
           position: relative;
-          @extend %input_border;
+          @extend %input_select_border;
           border: 1px solid #F0F0F5;
           width: 80.5%;
           height: 60px;
+          text-indent: initial;
           p:first-child{
             font-size: 0.875rem;
           }
@@ -403,11 +407,9 @@ main {
             -moz-appearance: none;
             appearance: none;
             box-sizing: initial;
-
             border-radius: 50%;
             width: 20px;
             height: 20px;
-
             border: 1px solid #F0F0F5;
             transition: 0.2s all linear;
             &:checked {
@@ -429,6 +431,22 @@ main {
         .dhlDelivery {
           p:first-child {
             font-weight: 700;
+          }
+        }
+      }
+      &.paymentInfo {
+        label {
+          @extend %label_font;
+        }
+        input {
+          @extend %input_select_border;
+        }
+        div:nth-child(2), div:nth-child(3) {
+          width: 64.8%;
+        }
+        div:nth-child(4)  {
+          div {
+            width: 47.2%;
           }
         }
       }
