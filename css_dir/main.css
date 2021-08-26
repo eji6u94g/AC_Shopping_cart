@@ -770,7 +770,7 @@ body {
   padding-bottom: 2rem;
 }
 
-footer__icon, .nav__icons__icon {
+footer .footer__icon, .nav__icons__icon {
   width: 1.5rem;
   height: 1.5rem;
 }
@@ -809,9 +809,15 @@ footer__icon, .nav__icons__icon {
   display: none;
 }
 
+body {
+  position: relative;
+}
+
 #main-app {
   width: 1110px;
+  height: 100%;
   margin: 0 auto;
+  position: relative;
 }
 
 .nav {
@@ -824,18 +830,12 @@ footer__icon, .nav__icons__icon {
 .nav__logo {
   width: 10.6rem;
   height: 1.875rem;
-}
-.nav__icons {
-  width: 132px;
-}
-.nav__logo {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
-
-footer a {
-  display: block;
+.nav__icons {
+  width: 132px;
 }
 main {
   margin-top: 80px;
@@ -1021,6 +1021,42 @@ main h1 {
 }
 .main__cart__totalPrice div span {
   font-weight: 700;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 20vh;
+}
+footer a {
+  display: block;
+}
+footer .footer__logo {
+  width: 175.49px;
+  height: 31px;
+  margin-top: 8vh;
+}
+footer .footer__link {
+  line-height: 1.5rem;
+}
+footer .footer__link__container {
+  margin-top: 3vh;
+}
+footer .footer__link a {
+  color: #808080;
+}
+footer .footer__link div img {
+  margin-right: 0.5rem;
+}
+
+.footer__bkg__color {
+  width: 100%;
+  height: 20vh;
+  background: #E5E5E5;
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
 }
 
 /*# sourceMappingURL=main.css.map */

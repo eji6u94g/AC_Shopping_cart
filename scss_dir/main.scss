@@ -276,9 +276,15 @@ $spacers: (
 }
 
 //////indivisual component setting ///
+body {
+  position: relative;
+}
+
 #main-app {
   width: 1110px;
+  height: 100%;
   margin: 0 auto;
+  position: relative;
 }
 
 .nav {
@@ -290,6 +296,9 @@ $spacers: (
   &__logo {
     width: 10.6rem;
     height: 1.875rem;
+    position:absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
   &__icons {
     width: 132px;
@@ -297,21 +306,6 @@ $spacers: (
     &__icon {
     @extend %icon;
     }
-  }
-}
-
-.nav__logo {
-  position:absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-footer {
-  a {
-    display: block;
-  }
-  &__icon {
-    @extend %icon;
   }
 }
 
@@ -547,7 +541,49 @@ main {
       }
     }
   }
+}
 
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 20vh;
+  a {
+    display: block;
+  }
+  .footer {
+    &__logo {
+      width: 175.49px;
+      height: 31px;
+      margin-top: 8vh;
+    }
+    &__icon {
+      @extend %icon;
+    }
+    &__link{
+      line-height: 1.5rem;
+      &__container {
+        margin-top: 3vh;
+      }
+      a {
+        color: #808080;
+      }
+      div {
+        img {
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+.footer__bkg__color {
+  width: 100%;
+  height: 20vh;
+  background: #E5E5E5;
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
 }
 
 
