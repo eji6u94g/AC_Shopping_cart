@@ -805,6 +805,10 @@ footer__icon, .nav__icons__icon {
   border-top: 1px solid #F0F0F5;
 }
 
+.d-none {
+  display: none;
+}
+
 #main-app {
   width: 1110px;
   margin: 0 auto;
@@ -840,6 +844,10 @@ main h1 {
   margin-bottom: 48px;
 }
 
+.main__customer {
+  height: 492px;
+  position: relative;
+}
 .main__customer #step-conntainer {
   margin-bottom: 64px;
 }
@@ -936,6 +944,36 @@ main h1 {
 }
 .main__customer__part.paymentInfo div:nth-child(4) div {
   width: 47.2%;
+}
+.main__customer__button {
+  width: 100%;
+  height: 72px;
+  border-top: 2px solid #E6E6EB;
+  position: absolute;
+  bottom: 0;
+}
+.main__customer__button button:nth-child(1) {
+  margin-bottom: 14.5px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.main__customer__button button:nth-child(2) {
+  width: 174px;
+  height: 46px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: #F67599;
+  border-radius: 8px;
+  color: white;
+}
+.main__customer__button button:nth-child(2) span {
+  color: white;
+}
+.main__customer__button button span {
+  margin-left: 13.5px;
+  margin-right: 13.5px;
 }
 .main__cart {
   border: 1px solid #F0F0F5;
