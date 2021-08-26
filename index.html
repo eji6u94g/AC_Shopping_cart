@@ -52,7 +52,7 @@
           </div>
 
           <form action="">
-            <div class='main__customer__part shippingInfo '>
+            <div class='main__customer__part shippingInfo d-none'>
               <h2 class="mb-6">寄送地址</h2>
 
               <div class='d-flex justify-content-between salution_name mb-6'>
@@ -120,12 +120,12 @@
               </div>
             </div>
 
-            <div class='main__customer__part shippingMethod d-none'>
+            <div class='main__customer__part shippingMethod '>
               <h2 class="mb-6">運送方式</h2>
 
               <div class='d-flex mb-6 standardDelivery align-items-center justify-content-between'>
                 <input type="radio" id='standard' name='delivery' value='standard' class="ml-5">
-                <div class="d-flex justify-content-between mx-5 w-90">
+                <div class="d-flex justify-content-between mx-5 w-80">
                   <label for="standard">
                     <p>標準運送</p>
                     <p>約3~7個工作天</p>
@@ -136,7 +136,7 @@
 
               <div class='d-flex dhlDelivery align-items-center justify-content-between'>
                 <input type="radio" id='dhl_delivery' name='delivery' value='dhl_delivery' class="ml-5">
-                <div class="d-flex justify-content-between mx-5 w-90">
+                <div class="d-flex justify-content-between mx-5 w-80">
                   <label for="dhl_delivery">
                     <p>DHL貨運</p>
                     <p>48小時內送達</p>
@@ -174,7 +174,7 @@
           </form>
 
           <div class="main__customer__button w-100">
-            <button><span>&#8592;</span>上一步</button>
+            <button class="d-none"><span>&#8592;</span>上一步</button>
             <button>下一步<span>&#8594;</span></button>
           </div>
         </div>
@@ -199,8 +199,8 @@
                   </div>
                 </div>
                 <div class="main__cart__item__price">
-                  <span>$</span>
-                  <span>3999</span>
+                  <span class="number-font">$</span>
+                  <span class="number-font">3999</span>
                 </div>
               </div>
 
@@ -220,22 +220,22 @@
                   </div>
                 </div>
                 <div class="main__cart__item__price">
-                  <span>$</span>
-                  <span>1299</span>
+                  <span class="number-font">$</span>
+                  <span class="number-font">1299</span>
                 </div>
               </div>
             </div>
             
             <div class="mb-8 d-flex justify-content-between border-top pt-4 main__cart__deliveryFee">
               <span>運費</span>
-              <span>免運</span>
+              <span class="number-font">免運</span>
             </div>
 
             <div  class='d-flex justify-content-between border-top pt-4 main__cart__totalPrice'>
               <span>小計</span>
               <div>
-                <span>$</span>
-                <span>5298</span>
+                <span class="number-font">$</span>
+                <span class="number-font">5298</span>
               </div>
             </div>
           </div>
@@ -277,7 +277,7 @@
       <div class="footer__link__container">
         <h2>追蹤 ALPHA Shop</h2>
         <div class="footer__link mt-3">
-          <a href="tel:+886 02123-45678">+886 02123-45678</a>
+          <a href="tel:+886 02123-45678" class="number-font">+886 02123-45678</a>
           <div class='d-flex mt-1'>
             <img src="img/footer/fb_icon@2x.png" alt="facebook link" class='footer__icon'>
             <img src="img/footer/ig_icon@2x.png" alt="instagram link" class='footer__icon'>

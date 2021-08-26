@@ -1,4 +1,8 @@
- /* reset css */
+/////// import google font //////
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+
+/* reset css */
 body {
   margin: 0;
   padding: 0;
@@ -222,9 +226,10 @@ $spacers: (
 ////// common setting //////////////
 * {
   // border: 1px solid red;
-  // -webkit-appearance: none;
-  // -moz-appearance: none;
-  // appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-family: 'Noto Sans TC', sans-serif;
 }
 
 %icon {
@@ -264,6 +269,10 @@ $spacers: (
 
 .d-none {
   display: none;
+}
+
+.number-font {
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 @mixin getStepNumber($num) {
@@ -390,18 +399,6 @@ main {
           p:nth-child(2), span{
             font-size: 0.75rem;
           }
-          // [type="radio"] {
-          //   -webkit-appearance: none;
-          //   border-radius: 50%;
-          //   border: 1px solid black;
-          //   cursor: pointer;
-          //   width: 20px;
-          //   height: 20px;
-          //   vertical-align: middle;
-          //   &:checked {
-          //     box-shadow: inset 0 0 0 5px black;
-          //   }
-          // }
           input {
             -webkit-appearance: none;
             -moz-appearance: none;

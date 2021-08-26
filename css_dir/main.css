@@ -1,4 +1,6 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
 /* reset css */
 body {
   margin: 0;
@@ -770,6 +772,13 @@ body {
   padding-bottom: 2rem;
 }
 
+* {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
 footer .footer__icon, .nav__icons__icon {
   width: 1.5rem;
   height: 1.5rem;
@@ -807,6 +816,10 @@ footer .footer__icon, .nav__icons__icon {
 
 .d-none {
   display: none;
+}
+
+.number-font {
+  font-family: "Nunito Sans", sans-serif;
 }
 
 body {
