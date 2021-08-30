@@ -252,6 +252,7 @@ $spacers: (
   height: 40px;
   width: 100%;
   text-indent: 1.125rem;
+  font-size: 0.75rem;
 }
 
 %label_font {
@@ -280,6 +281,7 @@ $spacers: (
     &:nth-child(#{$i})  .main__customer__step__number::after {
         content:"#{$i}";
         color: #AFB1BD;
+        margin-bottom: 2px;
       }
   }
 }
@@ -287,18 +289,20 @@ $spacers: (
 //////indivisual component setting ///
 body {
   position: relative;
+  overflow-y: scroll;
+  min-height: 800px;
 }
 
 #main-app {
-  width: 1110px;
+  width: 80%;
   height: 100%;
   margin: 0 auto;
   position: relative;
 }
 
 .nav {
+  margin-top: 30px;
   position:relative;
-  height: 60px;
   &__links {
     width: 384px;
   }
@@ -316,6 +320,17 @@ body {
     @extend %icon;
     }
   }
+  .material-icons {
+    cursor: pointer;
+  }
+  &__hambergur {
+    &__icon {
+      display: none;
+    }
+    &__input {
+      display: none;
+    }
+  }
 }
 
 main {
@@ -327,7 +342,7 @@ main {
 
 .main {
   &__customer {
-    height: 492px;
+    // height: 492px;
     position: relative;
     #step-conntainer {
       margin-bottom: 64px;
@@ -350,15 +365,22 @@ main {
       }
       .main__customer__step__number {
         &.checked::after {
-        content:"\2714";    
-        }
-        &.checked::after, &.active::after {
+          content:"\2714";
           color:white;
         }
+        &.checked {
+          background: #333333;
+          border: 1px solid #333333;
+        }
+        &.active::after {
+          color: #333333;
+        }
+        &.active {
+          border: 1px solid black;
+        }
       }
-      .checked, .active {
-        background: #333333;
-      }
+      
+      
     }
     &__part {
       &.shippingInfo {
@@ -541,10 +563,14 @@ main {
 }
 
 footer {
-  position: absolute;
-  bottom: 0;
+  // position: absolute;
+  // bottom: 0;
   width: 100%;
-  height: 20vh;
+  height: 200px;
+  background: #E5E5E5;
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-top: 150px;
   a {
     display: block;
   }
@@ -578,9 +604,130 @@ footer {
   width: 100%;
   height: 20vh;
   background: #E5E5E5;
-  position: absolute;
-  bottom: 0;
   z-index: -1;
+  margin: 0 auto;
+}
+
+@media screen and (max-device-width: 1400px) {
+  #main-app {
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  
+}
+
+@media screen and (max-device-width: 1010px) {
+  #main-app {
+    min-width: 375px;
+
+  }
+  main {
+    #main_container {
+      flex-direction: column;
+      align-items: center;
+
+    }
+  }
+  .main {
+    &__customer, &__cart {width: 100%;}
+    &__customer {
+      &__button {
+        display:none;
+        &#main_customer_button--1010px {
+          button:nth-child(2) {
+            width: 156px;
+            height: 46px;
+          }
+        }
+      }
+      &__step {
+        span:nth-child(2){display:none;}
+      }
+      &__part {
+        margin-bottom: 30px;
+        &.shippingInfo {
+          input, select {
+            text-indent: 0.4rem;
+          }
+          .phone_email, .county_address {
+            flex-direction: column;
+            div:first-child, div:nth-child(2) {
+              margin-top: 10px;
+              width:100%;
+            }
+          }
+        }
+      }
+    }
+    &__cart {
+      &__item {
+        flex-direction: column;
+        &__container {
+          left: initial;
+          right: 0;
+          &__quantity {
+           position: absolute;
+           right: 0;
+          }
+        }
+        &__price {
+          text-align: right;
+        }
+      }
+    }
+  }
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    &__links {
+      width: 100%;
+      max-height: 0;
+      overflow: hidden;
+      flex-direction: column;
+      clear: both;
+      background: #fff;
+      span {
+        text-align: center;
+        border-bottom: 1px solid #efefef;
+        padding: 10px 0;
+        font-size: 18px;
+        color: #5d5d5d;
+        &:hover {
+            background: #5d5d5d;
+            color: #fff;
+        }
+      }
+    }
+    &__icons {
+      width: 30%;
+      display:none;
+      margin: 0 auto;
+      padding: 10px 0;
+    }
+    &__hambergur {
+      &__icon {
+        display: flex;
+      }
+      &__input {
+        &:checked ~ #nav__links {
+          max-height: initial;
+        }
+        &:checked ~ #nav__icons {
+          display: flex;
+        }
+      }
+    }
+  }
+  .footer {
+    display: none;
+  }
+  #main_customer_button--1010px {
+    display: initial;
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
 }
 
 

@@ -6,11 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="/css_dir/main.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 </head>
 <body>
   <div id='main-app'>
     <nav class='d-flex nav align-items-center justify-content-between'>
-      <div class='nav__links d-flex align-items-center justify-content-between'>
+      <label for="nav__hambergur" class="nav__hambergur__icon"><span class="material-icons">menu</span></label>
+      <input type="checkbox" id="nav__hambergur" class="nav__hambergur__input">
+      <div class='nav__links d-flex align-items-center justify-content-between' id="nav__links"> 
         <span>男款</span>
         <span>女款</span>
         <span>最新消息</span>
@@ -20,7 +24,7 @@
 
       <img src="/img/nav/Logo@2x.png" alt="Alpha shop icon" class='nav__logo'>
 
-      <div class='nav__icons d-flex align-items-center justify-content-between'>
+      <div class='nav__icons d-flex align-items-center justify-content-between' id="nav__icons">
         <img src="img/nav/search_icon@2x.png" alt="search icon" class='nav__icons__icon'>
         <img src="img/nav/shoppingcart_icom@2x.png" alt="shopping cart icon" class='nav__icons__icon'>
         <img src="img/nav/moon_icon@2x.png" alt="moon icon" class='nav__icons__icon'>
@@ -30,17 +34,17 @@
     <main>
       <h1>結帳</h1>
 
-      <div class='d-flex justify-content-between'>
+      <div class='d-flex justify-content-between' id="main_container">
         <div class="main__customer w-50">
           <div id='step-conntainer' class='d-flex align-items-center justify-content-between'>
             <div class="main__customer__step d-flex align-items-center">
-              <span class="d-flex align-items-center justify-content-center main__customer__step__number checked"></span>
+              <span class="d-flex align-items-center justify-content-center main__customer__step__number active"></span>
               <span class="ml-2">寄送地址</span>
               <div class="ml-8"></div>
             </div>
 
             <div class="main__customer__step d-flex align-items-center"> 
-              <span class="d-flex align-items-center justify-content-center main__customer__step__number active"></span>
+              <span class="d-flex align-items-center justify-content-center main__customer__step__number "></span>
               <span class="ml-2">運送方式</span>
               <div class="ml-8"></div>
             </div>
@@ -52,7 +56,7 @@
           </div>
 
           <form action="">
-            <div class='main__customer__part shippingInfo d-none'>
+            <div class='main__customer__part shippingInfo '>
               <h2 class="mb-6">寄送地址</h2>
 
               <div class='d-flex justify-content-between salution_name mb-6'>
@@ -120,7 +124,7 @@
               </div>
             </div>
 
-            <div class='main__customer__part shippingMethod '>
+            <div class='main__customer__part shippingMethod d-none'>
               <h2 class="mb-6">運送方式</h2>
 
               <div class='d-flex mb-6 standardDelivery align-items-center justify-content-between'>
@@ -174,8 +178,8 @@
           </form>
 
           <div class="main__customer__button w-100">
-            <button class="d-none"><span>&#8592;</span>上一步</button>
-            <button>下一步<span>&#8594;</span></button>
+            <button class="d-none" id="previous-btn"><span>&#8592;</span>上一步</button>
+            <button id="next-btn">下一步<span>&#8594;</span></button>
           </div>
         </div>
 
@@ -183,16 +187,16 @@
           <h3 class="mb-8">購物籃</h3>
           <div>
             <div>
-              <div class='d-flex mb-8 justify-content-between position-relative'>
+              <div class='d-flex mb-8 justify-content-between position-relative main__cart__item'>
                 <img src="/img/cart/item_1@2x.png" alt="破壞補丁修身牛仔褲" class='main__cart__img'>
                 <div class="main__cart__item__container">
                   <p>破壞補丁修身牛仔褲</p>
-                  <div class='d-flex mt-4 main__cart__item__container__quantity justify-content-between align-items-center'>
-                    <span class="main__cart__item__container__quantity__icon">
+                  <div class='d-flex mt-4  main__cart__item__container__quantity justify-content-between align-items-center'>
+                    <span class="main__cart__item__container__quantity__icon minus">
                       <div class="main__cart__item__container__quantity__icon__minus"></div>
                     </span>
                     <span>1</span>
-                    <span class="main__cart__item__container__quantity__icon">
+                    <span class="main__cart__item__container__quantity__icon plus">
                       <div class="main__cart__item__container__quantity__icon__minus"></div>
                       <div class="main__cart__item__container__quantity__icon__plus"></div>
                     </span>
@@ -200,20 +204,20 @@
                 </div>
                 <div class="main__cart__item__price">
                   <span class="number-font">$</span>
-                  <span class="number-font">3999</span>
+                  <span class="number-font item-price">3999</span>
                 </div>
               </div>
 
-              <div class='d-flex mb-8 justify-content-between position-relative'>
+              <div class='d-flex mb-8 justify-content-between position-relative main__cart__item'>
                 <img src="/img/cart/item_2@2x.png" alt="刷色直筒牛仔褲" class='main__cart__img'>
                 <div class="main__cart__item__container">
                   <p>刷色直筒牛仔褲</p>
                   <div class='d-flex mt-4  main__cart__item__container__quantity justify-content-between align-items-center'>
-                    <span class="main__cart__item__container__quantity__icon">
+                    <span class="main__cart__item__container__quantity__icon minus">
                       <div class="main__cart__item__container__quantity__icon__minus"></div>
                     </span>
                     <span>1</span>
-                    <span class="main__cart__item__container__quantity__icon">
+                    <span class="main__cart__item__container__quantity__icon plus">
                       <div class="main__cart__item__container__quantity__icon__minus"></div>
                       <div class="main__cart__item__container__quantity__icon__plus"></div>
                     </span>
@@ -221,7 +225,7 @@
                 </div>
                 <div class="main__cart__item__price">
                   <span class="number-font">$</span>
-                  <span class="number-font">1299</span>
+                  <span class="number-font item-price">1299</span>
                 </div>
               </div>
             </div>
@@ -235,15 +239,20 @@
               <span>小計</span>
               <div>
                 <span class="number-font">$</span>
-                <span class="number-font">5298</span>
+                <span class="number-font" id="total-price">5298</span>
               </div>
             </div>
           </div>
         </div>
+
+        <div class="main__customer__button w-100 d-none" id="main_customer_button--1010px">
+            <button class="d-none" id="previous-btn--1010px"><span>&#8592;</span>上一步</button>
+            <button id="next-btn--1010px">下一步<span>&#8594;</span></button>
+        </div>
       </div>
     </main>
 
-    <footer class='d-flex justify-content-between'>
+    <footer class='d-flex justify-content-between footer'>
       <img src="/img/nav/Logo@2x.png" alt="Alpha shop icon" class='footer__logo'>
 
       <div class="footer__link__container">
@@ -288,7 +297,7 @@
     </footer>
   </div>
 
-  <div class="footer__bkg__color"></div>
+  <!-- <div class="footer__bkg__color"></div> -->
 
   <script src="/index.js"></script>
 </body>
