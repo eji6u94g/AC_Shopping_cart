@@ -112,6 +112,10 @@ body {
   position: absolute;
 }
 
+.flex-g-1 {
+  flex-grow: 1;
+}
+
 .flex-column {
   flex-direction: column;
 }
@@ -134,18 +138,6 @@ body {
 
 .justify-content-around {
   justify-content: space-around;
-}
-
-.align-items-start {
-  align-items: flex-start;
-}
-
-.align-items-end {
-  align-items: flex-end;
-}
-
-.align-items-center {
-  align-items: center;
 }
 
 .align-items-start {
@@ -826,22 +818,19 @@ footer .footer__icon, .nav__icons__icon {
 body {
   position: relative;
   overflow-y: scroll;
-  min-height: 800px;
 }
 
 #main-app {
-  width: 80%;
-  height: 100%;
+  width: 100%;
   margin: 0 auto;
   position: relative;
+  padding-left: 15%;
+  padding-right: 15%;
 }
 
 .nav {
   margin-top: 30px;
   position: relative;
-}
-.nav__links {
-  width: 384px;
 }
 .nav__logo {
   width: 10.6rem;
@@ -853,14 +842,14 @@ body {
 .nav__icons {
   width: 132px;
 }
-.nav .material-icons {
-  cursor: pointer;
-}
 .nav__hambergur__icon {
   display: none;
 }
 .nav__hambergur__input {
   display: none;
+}
+.nav .material-icons {
+  cursor: pointer;
 }
 
 main {
@@ -875,27 +864,36 @@ main h1 {
 }
 .main__customer #step-conntainer {
   margin-bottom: 64px;
+  width: 100%;
+}
+.main__customer__step {
+  font-family: "Nunito Sans", sans-serif;
 }
 .main__customer__step:nth-child(1) .main__customer__step__number::after {
   content: "1";
-  color: #AFB1BD;
-  margin-bottom: 2px;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 5px;
+  font-weight: 700;
 }
 .main__customer__step:nth-child(2) .main__customer__step__number::after {
   content: "2";
-  color: #AFB1BD;
-  margin-bottom: 2px;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 5px;
+  font-weight: 700;
 }
 .main__customer__step:nth-child(3) .main__customer__step__number::after {
   content: "3";
-  color: #AFB1BD;
-  margin-bottom: 2px;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 5px;
+  font-weight: 700;
 }
 .main__customer__step span:first-child {
   width: 24px;
   height: 24px;
   border-radius: 50%;
   border: 1px solid #AFB1BD;
+  color: #AFB1BD;
+  margin-bottom: 2px;
 }
 .main__customer__step span:nth-child(2) {
   color: #AFB1BD;
@@ -969,9 +967,6 @@ main h1 {
   left: 0;
   border-radius: 4px;
 }
-.main__customer__part.shippingMethod .dhlDelivery p:first-child {
-  font-weight: 700;
-}
 .main__customer__part.paymentInfo div:nth-child(2), .main__customer__part.paymentInfo div:nth-child(3) {
   width: 64.8%;
 }
@@ -982,26 +977,18 @@ main h1 {
   width: 100%;
   height: 72px;
   border-top: 2px solid #E6E6EB;
-  position: absolute;
-  bottom: 0;
 }
-.main__customer__button button:nth-child(1) {
+.main__customer__button #previous-btn {
   margin-bottom: 14.5px;
-  position: absolute;
-  left: 0;
-  bottom: 0;
 }
-.main__customer__button button:nth-child(2) {
+.main__customer__button #next-btn {
   width: 174px;
   height: 46px;
-  position: absolute;
-  right: 0;
-  bottom: 0;
   background: #F67599;
   border-radius: 8px;
   color: white;
 }
-.main__customer__button button:nth-child(2) span {
+.main__customer__button #next-btn span {
   color: white;
 }
 .main__customer__button button span {
@@ -1085,26 +1072,16 @@ footer .footer__link div img {
   margin-right: 0.5rem;
 }
 
-.footer__bkg__color {
-  width: 100%;
-  height: 20vh;
-  background: #E5E5E5;
-  z-index: -1;
-  margin: 0 auto;
-}
-
-@media screen and (max-device-width: 1400px) {
-  #main-app {
-    width: 100%;
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-}
-@media screen and (max-device-width: 1010px) {
+@media screen and (max-device-width: 375px) {
   #main-app {
     min-width: 375px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
+  main {
+    margin-top: 37px;
+  }
   main #main_container {
     flex-direction: column;
     align-items: center;
@@ -1116,9 +1093,13 @@ footer .footer__link div img {
   .main__customer__button {
     display: none;
   }
-  .main__customer__button#main_customer_button--1010px button:nth-child(2) {
-    width: 156px;
-    height: 46px;
+  .main__customer__button#main_customer_button--mobile {
+    display: flex;
+    padding-bottom: 40px;
+    height: auto;
+  }
+  .main__customer__button#main_customer_button--mobile #next-btn {
+    width: 100%;
   }
   .main__customer__step span:nth-child(2) {
     display: none;
@@ -1134,6 +1115,12 @@ footer .footer__link div img {
   }
   .main__customer__part.shippingInfo .phone_email div:first-child, .main__customer__part.shippingInfo .phone_email div:nth-child(2), .main__customer__part.shippingInfo .county_address div:first-child, .main__customer__part.shippingInfo .county_address div:nth-child(2) {
     margin-top: 10px;
+    width: 100%;
+  }
+  .main__customer__part.shippingMethod .standardDelivery, .main__customer__part.shippingMethod .dhlDelivery {
+    width: 100%;
+  }
+  .main__customer__part.paymentInfo div:nth-child(2), .main__customer__part.paymentInfo div:nth-child(3) {
     width: 100%;
   }
   .main__cart__item {

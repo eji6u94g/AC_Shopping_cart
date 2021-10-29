@@ -2,226 +2,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
 
-/* reset css */
-body {
-  margin: 0;
-  padding: 0;
-}
-* {
-  box-sizing: border-box;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin: 0px;
-  padding: 0px;
-}
-ul,
-ol,
-li {
-  list-style: none;
-  margin: 0px;
-  padding: 0px;
-}
-a,
-a:hover,
-a:focus {
-  text-decoration: none;
-}
-img {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-.btn,
-button,
-button:focus,
-input:focus,
-textarea:focus,
-select,
-select:focus,
-a:focus {
-  outline: 0px !important;
-}
-button {
-  background-color: transparent;
-  border: 0;
-  cursor: pointer;
-}
-button[disabled] {
-  pointer-events: none;
-}
-input {
-  padding: 0;
-}
-input:required {
-  box-shadow: none;
-}
-input:invalid {
-  box-shadow: none;
-}
+/////// import reset CSS setting ///////
+@import "./resetCSS";
 
-// body, html, display setting
-html {
-  font-size: 16px;
-  height: 100%;
-}
-body {
-  height: 100%;
-}
-.d-none {
-  display: none;
-}
-.d-inline {
-  display: inline;
-}
-.d-inline-block {
-  display: inline-block;
-}
-.d-block {
-  display: block;
-}
-.d-flex {
-  display: flex;
-}
-
-// position setting
-.position-relative {
-  position: relative;
-}
-
-.position-absolute {
-  position:absolute;
-}
-
-//flex, alignment, cursor setting
-.flex-column {
-  flex-direction: column;
-}
-.justify-content-start {
-  justify-content: flex-start;
-}
-.justify-content-end {
-  justify-content: flex-end;
-}
-.justify-content-center {
-  justify-content: center;
-}
-.justify-content-between {
-  justify-content: space-between;
-}
-.justify-content-around {
-  justify-content: space-around;
-}
-.align-items-start {
-  align-items: flex-start;
-}
-.align-items-end {
-  align-items: flex-end;
-}
-.align-items-center {
-  align-items: center;
-}
-.align-items-start {
-  align-items: flex-start;
-}
-.align-items-end {
-  align-items: flex-end;
-}
-.align-items-center {
-  align-items: center;
-}
-.text-center {
-  text-align: center;
-}
-.text-right {
-  text-align: right;
-}
-.text-left {
-  text-align: left;
-}
-.cursor-pointer {
-  cursor: pointer;
-}
-
-//width, height setting
-$sizes: (
-  25: 25%,
-  40: 40%,
-  50: 50%,
-  75: 75%,
-  80: 80%,
-  90: 90%,
-  100: 100%
-);
-@each $prop, $abbrev in (width: w, height: h) {
- @each $num, $val in $sizes {
-   .#{$abbrev}-#{$num} {
-     #{$prop}: $val;
-   }
- }
-}
-
-//margin, padding setting
-$spacer: 1rem;
-$spacers: (
-  0: 0,
-  1: (
-    $spacer * 0.25
-  ),
-  2: (
-    $spacer * 0.5
-  ),
-  3: (
-    $spacer * 0.75
-  ),
-  4: $spacer,
-  5: (
-    $spacer * 1.25
-  ),
-  6: (
-    $spacer * 1.5
-  ),
-  7: (
-    $spacer * 1.75
-  ),
-  8: (
-    $spacer * 2
-  )
-);
-@each $prop, $abbrev in (margin: m, padding: p) {
-  @each $num, $val in $spacers {
-    .#{$abbrev}-#{$num} {
-      #{$prop}: $val;
-    }
-    .#{$abbrev}t-#{$num} {
-      #{$prop}-top: $val;
-    }
-    .#{$abbrev}r-#{$num} {
-      #{$prop}-right: $val;
-    }
-    .#{$abbrev}b-#{$num} {
-      #{$prop}-bottom: $val;
-    }
-    .#{$abbrev}l-#{$num} {
-      #{$prop}-left: $val;
-    }
-    .#{$abbrev}x-#{$num} {
-      #{$prop}-left: $val;
-      #{$prop}-right: $val;
-    }
-    .#{$abbrev}y-#{$num} {
-      #{$prop}-top: $val;
-      #{$prop}-bottom: $val;
-    }
+@mixin getStepNumber($num) {
+  @for $i from 1 through $num {
+    &:nth-child(#{$i})  .main__customer__step__number::after {
+        content:"#{$i}";
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 5px;
+        font-weight: 700;
+      }
   }
 }
-
-////// basic setting end ////////////
 
 ////// common setting //////////////
 * {
@@ -276,36 +69,25 @@ $spacers: (
   font-family: 'Nunito Sans', sans-serif;
 }
 
-@mixin getStepNumber($num) {
-  @for $i from 1 through $num {
-    &:nth-child(#{$i})  .main__customer__step__number::after {
-        content:"#{$i}";
-        color: #AFB1BD;
-        margin-bottom: 2px;
-      }
-  }
-}
-
 //////indivisual component setting ///
 body {
   position: relative;
   overflow-y: scroll;
-  min-height: 800px;
+  // min-height: 800px;
 }
 
 #main-app {
-  width: 80%;
-  height: 100%;
+  width: 100%;
+  // height: 100%;
   margin: 0 auto;
   position: relative;
+  padding-left: 15%;
+  padding-right: 15%;
 }
 
 .nav {
   margin-top: 30px;
   position:relative;
-  &__links {
-    width: 384px;
-  }
   &__logo {
     width: 10.6rem;
     height: 1.875rem;
@@ -315,13 +97,9 @@ body {
   }
   &__icons {
     width: 132px;
-    // height: 1.5rem;
     &__icon {
     @extend %icon;
     }
-  }
-  .material-icons {
-    cursor: pointer;
   }
   &__hambergur {
     &__icon {
@@ -330,6 +108,9 @@ body {
     &__input {
       display: none;
     }
+  }
+  .material-icons {
+    cursor: pointer;
   }
 }
 
@@ -342,18 +123,21 @@ main {
 
 .main {
   &__customer {
-    // height: 492px;
     position: relative;
     #step-conntainer {
       margin-bottom: 64px;
+      width: 100%;
     }
     &__step {
+      font-family: 'Nunito Sans', sans-serif;
       @include getStepNumber(3);
       span:first-child {
         width: 24px;
         height: 24px;
         border-radius: 50%;
         border: 1px solid #AFB1BD;
+        color: #AFB1BD;
+        margin-bottom: 2px;
       }
       span:nth-child(2){
         color: #AFB1BD;
@@ -362,6 +146,7 @@ main {
         width: 60px;
         height: 1px;
         background: black;
+        // transform: translateX(-20%);
       }
       .main__customer__step__number {
         &.checked::after {
@@ -378,9 +163,7 @@ main {
         &.active {
           border: 1px solid black;
         }
-      }
-      
-      
+      } 
     }
     &__part {
       &.shippingInfo {
@@ -447,11 +230,6 @@ main {
             }
           }
         }
-        .dhlDelivery {
-          p:first-child {
-            font-weight: 700;
-          }
-        }
       }
       &.paymentInfo {
         label {
@@ -474,20 +252,12 @@ main {
       width: 100%;
       height: 72px;
       border-top: 2px solid #E6E6EB;
-      position: absolute;
-      bottom: 0;
-      button:nth-child(1){
+      #previous-btn{
         margin-bottom: 14.5px;
-        position: absolute;
-        left: 0;
-        bottom: 0;
       }
-      button:nth-child(2){
+      #next-btn{
         width: 174px;
         height: 46px;
-        position: absolute;
-        right: 0;
-        bottom: 0;
         background: #F67599;
         border-radius: 8px;
         color: white;
@@ -563,8 +333,6 @@ main {
 }
 
 footer {
-  // position: absolute;
-  // bottom: 0;
   width: 100%;
   height: 200px;
   background: #E5E5E5;
@@ -600,33 +368,31 @@ footer {
   }
 }
 
-.footer__bkg__color {
-  width: 100%;
-  height: 20vh;
-  background: #E5E5E5;
-  z-index: -1;
-  margin: 0 auto;
-}
+// .footer__bkg__color {
+//   width: 100%;
+//   height: 20vh;
+//   background: #E5E5E5;
+//   z-index: -1;
+//   margin: 0 auto;
+// }
 
-@media screen and (max-device-width: 1400px) {
-  #main-app {
-    width: 100%;
-    padding-left: 30px;
-    padding-right: 30px;
-  }
-  
-}
+// @media screen and (max-device-width: 1400px) {
+//   #main-app {
+//     width: 100%;
+//   }
+// }
 
-@media screen and (max-device-width: 1010px) {
+@media screen and (max-device-width: 375px) {
   #main-app {
     min-width: 375px;
-
+    padding-left: 15px;
+    padding-right: 15px;
   }
   main {
+    margin-top: 37px;
     #main_container {
       flex-direction: column;
       align-items: center;
-
     }
   }
   .main {
@@ -634,10 +400,12 @@ footer {
     &__customer {
       &__button {
         display:none;
-        &#main_customer_button--1010px {
-          button:nth-child(2) {
-            width: 156px;
-            height: 46px;
+        &#main_customer_button--mobile {
+          display: flex;
+          padding-bottom: 40px;
+          height: auto;
+          #next-btn {
+            width: 100%;
           }
         }
       }
@@ -656,6 +424,16 @@ footer {
               margin-top: 10px;
               width:100%;
             }
+          }
+        }
+        &.shippingMethod {
+          .standardDelivery, .dhlDelivery {
+            width: 100%;
+          }
+        }
+        &.paymentInfo {
+          div:nth-child(2), div:nth-child(3) {
+            width: 100%;
           }
         }
       }

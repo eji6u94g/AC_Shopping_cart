@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,17 +10,19 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 </head>
+
 <body>
   <div id='main-app'>
+    <!-- nav bar -->
     <nav class='d-flex nav align-items-center justify-content-between'>
       <label for="nav__hambergur" class="nav__hambergur__icon"><span class="material-icons">menu</span></label>
       <input type="checkbox" id="nav__hambergur" class="nav__hambergur__input">
       <div class='nav__links d-flex align-items-center justify-content-between' id="nav__links"> 
-        <span>男款</span>
-        <span>女款</span>
-        <span>最新消息</span>
-        <span>客製商品</span>
-        <span>聯絡我們</span>
+        <span class="mx-2">男款</span>
+        <span class="mx-2">女款</span>
+        <span class="mx-2">最新消息</span>
+        <span class="mx-2">客製商品</span>
+        <span class="mx-2">聯絡我們</span>
       </div>
 
       <img src="/img/nav/Logo@2x.png" alt="Alpha shop icon" class='nav__logo'>
@@ -31,11 +34,13 @@
       </div>
     </nav>
 
+    <!-- form and shopping cart -->
     <main>
       <h1>結帳</h1>
 
       <div class='d-flex justify-content-between' id="main_container">
-        <div class="main__customer w-50">
+        <!-- left form info -->
+        <div class="main__customer w-50 d-flex flex-column">
           <div id='step-conntainer' class='d-flex align-items-center justify-content-between'>
             <div class="main__customer__step d-flex align-items-center">
               <span class="d-flex align-items-center justify-content-center main__customer__step__number active"></span>
@@ -55,7 +60,7 @@
             </div>
           </div>
 
-          <form action="">
+          <form action="" class="flex-g-1">
             <div class='main__customer__part shippingInfo '>
               <h2 class="mb-6">寄送地址</h2>
 
@@ -87,7 +92,7 @@
                 </div>
               </div>
 
-              <div class='d-flex justify-content-between county_address mb-6'>
+              <div class='d-flex justify-content-between county_address'>
                 <div>
                   <label for="county">縣市</label>
                   <select name="county" id="county" required>
@@ -177,12 +182,14 @@
             </div>
           </form>
 
-          <div class="main__customer__button w-100">
-            <button class="d-none" id="previous-btn"><span>&#8592;</span>上一步</button>
+          <!-- desktop button -->
+          <div class="main__customer__button mt-6 d-flex justify-content-between align-items-end">
+            <button id="previous-btn"></button>
             <button id="next-btn">下一步<span>&#8594;</span></button>
           </div>
         </div>
 
+        <!-- right shopping cart info -->
         <div class="main__cart w-40 py-8 px-6 d-flex flex-column justify-content-between">
           <h3 class="mb-8">購物籃</h3>
           <div>
@@ -245,9 +252,10 @@
           </div>
         </div>
 
-        <div class="main__customer__button w-100 d-none" id="main_customer_button--1010px">
-            <button class="d-none" id="previous-btn--1010px"><span>&#8592;</span>上一步</button>
-            <button id="next-btn--1010px">下一步<span>&#8594;</span></button>
+        <!-- mobile button -->
+        <div class="main__customer__button d-none mt-6 pt-6 d-flex justify-content-between align-items-end" id="main_customer_button--mobile">
+          <button id="previous-btn" class="d-none"></button>
+          <button id="next-btn">下一步<span>&#8594;</span></button>
         </div>
       </div>
     </main>
@@ -296,9 +304,6 @@
       </div>
     </footer>
   </div>
-
-  <!-- <div class="footer__bkg__color"></div> -->
-
   <script src="/index.js"></script>
 </body>
 </html>

@@ -1,9 +1,9 @@
 const previousBtn = document.getElementById('previous-btn')
-const previousBtnMobile = document.querySelector('#previous-btn--1010px')
+// const previousBtnMobile = document.querySelector('#previous-btn--mobile')
 const nextBtn = document.getElementById('next-btn')
-const nextBtnMobile = document.querySelector('#next-btn--1010px')
+// const nextBtnMobile = document.querySelector('#next-btn--mobile')
 const btnControl = document.querySelector('.main__customer__button')
-const btnControlForMobile = document.querySelector('#main_customer_button--1010px')
+const btnControlForMobile = document.querySelector('#main_customer_button--mobile')
 const formparts = document.querySelectorAll('.main__customer__part')
 const steps = document.querySelectorAll('.main__customer__step')
 const shoppingCart = document.querySelector('.main__cart')
@@ -19,7 +19,7 @@ function ControlBtnClicked(event) {
   event.preventDefault()
   const currentStep = steps[step].querySelector('span')
 
-  if (event.target.matches('#next-btn') || event.target.matches('#next-btn--1010px')) {
+  if (event.target.matches('#next-btn')) {
     const nextStep = steps[step + 1].querySelector('span')
     currentStep.classList.remove('active')
     currentStep.classList.add('checked')
@@ -28,7 +28,7 @@ function ControlBtnClicked(event) {
     formparts[step + 1].classList.toggle('d-none')
     step += 1
   }
-  if (event.target.matches('#previous-btn') || event.target.matches('#previous-btn--1010px')) {
+  if (event.target.matches('#previous-btn')) {
     const previousStep = steps[step - 1].querySelector('span')
     currentStep.classList.remove('active')
     previousStep.classList.remove('checked')
@@ -42,18 +42,29 @@ function ControlBtnClicked(event) {
 
 function controlBtnChange() {
   if (step !== 0) {
-    previousBtn.classList.remove('d-none')
-    previousBtnMobile.classList.remove('d-none')
+    // previousBtn.querySelector('span').classList.remove('d-none')
+    previousBtn.innerHTML = '<span>&#8592;</span>上一步'
+    btnControlForMobile.querySelector('#previous-btn').classList.remove('d-none')
+    btnControlForMobile.querySelector('#previous-btn').innerHTML = '<span>&#8592;</span>上一步'
+    btnControlForMobile.querySelector('#next-btn').style.width = "156px"
+    // previousBtnMobile.classList.remove('d-none')
   } else {
-    previousBtn.classList.add('d-none')
-    previousBtnMobile.classList.add('d-none')
+    // previousBtn.classList.add('d-none')
+    // previousBtn.querySelector('span').classList.add('d-none')
+    previousBtn.innerText = ''
+    btnControlForMobile.querySelector('#previous-btn').classList.add('d-none')
+    btnControlForMobile.querySelector('#previous-btn').innerText = ''
+    btnControlForMobile.querySelector('#next-btn').style.width = "100%"
+    // previousBtnMobile.classList.add('d-none')
   }
   if (step === 2) {
-    nextBtn.innerHTML = '確認下單'
-    nextBtnMobile.innerHTML = '確認下單'
+    nextBtn.innerText = '確認下單'
+    btnControlForMobile.querySelector('#next-btn').innerText = '確認下單'
+    // nextBtnMobile.innerHTML = '確認下單'
   } else {
     nextBtn.innerHTML = '下一步<span>&#8594;</span>'
-    nextBtnMobile.innerHTML = '下一步<span>&#8594;</span>'
+    btnControlForMobile.querySelector('#next-btn').innerHTML = '下一步<span>&#8594;</span>'
+    // nextBtnMobile.innerHTML = '下一步<span>&#8594;</span>'
   }
 }
 
