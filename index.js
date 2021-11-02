@@ -18,19 +18,24 @@ shoppingCart.addEventListener('click', shoppingCartNumberChange)
 function ControlBtnClicked(event) {
   event.preventDefault()
   const currentStep = steps[step].querySelector('span')
+  const currentStepTitle = steps[step].querySelectorAll('span')[1]
 
   if (event.target.matches('#next-btn')) {
     const nextStep = steps[step + 1].querySelector('span')
+    const nextStepTitle = steps[step + 1].querySelectorAll('span')[1]
     currentStep.classList.remove('active')
     currentStep.classList.add('checked')
     nextStep.classList.add('active')
+    nextStepTitle.classList.add('title_active')
     formparts[step].classList.toggle('d-none')
     formparts[step + 1].classList.toggle('d-none')
     step += 1
   }
   if (event.target.matches('#previous-btn')) {
     const previousStep = steps[step - 1].querySelector('span')
+    const previousStepTitle = steps[step - 1].querySelectorAll('span')[1]
     currentStep.classList.remove('active')
+    currentStepTitle.classList.remove('title_active')
     previousStep.classList.remove('checked')
     previousStep.classList.add('active')
     formparts[step].classList.toggle('d-none')

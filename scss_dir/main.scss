@@ -141,6 +141,9 @@ main {
       }
       span:nth-child(2){
         color: #AFB1BD;
+        &.title_active {
+          color: black;
+        }
       }
       div {
         width: 60px;
@@ -163,7 +166,7 @@ main {
         &.active {
           border: 1px solid black;
         }
-      } 
+      }
     }
     &__part {
       &.shippingInfo {
@@ -232,6 +235,11 @@ main {
         }
       }
       &.paymentInfo {
+        div{
+          &:nth-of-type(2) {
+            width:100%;
+          }
+        };
         label {
           @extend %label_font;
         }

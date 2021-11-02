@@ -898,6 +898,9 @@ main h1 {
 .main__customer__step span:nth-child(2) {
   color: #AFB1BD;
 }
+.main__customer__step span:nth-child(2).title_active {
+  color: black;
+}
 .main__customer__step div {
   width: 60px;
   height: 1px;
@@ -966,6 +969,9 @@ main h1 {
   top: 0;
   left: 0;
   border-radius: 4px;
+}
+.main__customer__part.paymentInfo div:nth-of-type(2) {
+  width: 100%;
 }
 .main__customer__part.paymentInfo div:nth-child(2), .main__customer__part.paymentInfo div:nth-child(3) {
   width: 64.8%;
